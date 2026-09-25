@@ -8,6 +8,8 @@ revises them; this project posts the final versions.
 
 - **Never post without an explicit yes from Sylvia in the current session**, for the
   exact text. Show what will go out, per platform, then wait.
+- **Only post text Sylvia has given you.** Never write, rewrite or "improve" a post
+  yourself. If you're asked to post without the text, ask for it.
 - Never print, log or ask for tokens or passwords. Credentials live in the
   "Social Media" cloud environment, not in this repo.
 - If a request fails, show the error. Don't improvise workarounds (other hosts,
