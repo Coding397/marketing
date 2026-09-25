@@ -21,7 +21,7 @@ revises them; this project posts the final versions.
 |---|---|---|
 | Mastodon | Working | Environment API credential (Bearer) on `wandering.shop`; proxy adds it, you never see it |
 | Facebook | Working, app is Live | Environment API credential (Bearer) on `graph.facebook.com`; Page token, never expires |
-| Bluesky | Being set up | App password in env vars `BSKY_HANDLE`, `BSKY_APP_PASSWORD` |
+| Bluesky | Login works; first post in progress | App password in env vars `BSKY_HANDLE`, `BSKY_APP_PASSWORD` |
 | X | Not started | |
 | LinkedIn | Skipped on purpose | |
 
@@ -48,4 +48,6 @@ revises them; this project posts the final versions.
 - Link cards aren't automatic: fetch the article's og:title / og:description / og:image,
   upload the image with `com.atproto.repo.uploadBlob`, and attach an
   `app.bsky.embed.external` embed.
+- Bluesky rejects card images over 1 MB (article screenshots are often ~1.6 MB).
+  Always shrink the card image to a JPEG under 1 MB before uploading; no need to ask.
 - Allowed network domains: `bsky.social`, `*.bsky.network`, `fearoflanding.com`.
