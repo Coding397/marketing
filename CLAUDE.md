@@ -22,7 +22,7 @@ revises them; this project posts the final versions.
 | Mastodon | Working | Environment API credential (Bearer) on `wandering.shop`; proxy adds it, you never see it |
 | Facebook | Working, app is Live | Environment API credential (Bearer) on `graph.facebook.com`; Page token, never expires |
 | Bluesky | Working | App password in env vars `BSKY_HANDLE`, `BSKY_APP_PASSWORD` |
-| X | Not started | |
+| X | Being set up | OAuth 1.0a: four keys, in env vars (or an OAuth 1.0a environment credential if one exists) |
 | LinkedIn | Skipped on purpose | |
 
 ### Mastodon
@@ -51,3 +51,16 @@ revises them; this project posts the final versions.
 - Bluesky rejects card images over 1 MB (article screenshots are often ~1.6 MB).
   Always shrink the card image to a JPEG under 1 MB before uploading; no need to ask.
 - Allowed network domains: `bsky.social`, `*.bsky.network`, `fearoflanding.com`.
+
+### X
+- Account: @FearofLanding. App in the X developer console (console.x.com), pay-per-use.
+- **Costs money**: $0.20 per post containing a URL ($0.015 without). Never post
+  test posts casually; every retry costs.
+- Auth is OAuth 1.0a user context. If not handled by an environment credential, the keys
+  are in env vars `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, `X_ACCESS_TOKEN_SECRET`.
+  Sign each request (HMAC-SHA1). Don't use the OAuth 2.0 client id/secret.
+- Post: `POST https://api.x.com/2/tweets` with JSON `{"text": "..."}`.
+- X builds link cards itself from the article's tags; no image handling needed.
+- Allowed network domains: `api.x.com`, `api.twitter.com`.
+- The app is labelled "Development" in the console. After the first post, check it
+  shows to logged-out viewers (Facebook's development mode hid posts).
