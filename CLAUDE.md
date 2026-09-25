@@ -21,7 +21,7 @@ revises them; this project posts the final versions.
 |---|---|---|
 | Mastodon | Working | Environment API credential (Bearer) on `wandering.shop`; proxy adds it, you never see it |
 | Facebook | Working, app is Live | Environment API credential (Bearer) on `graph.facebook.com`; Page token, never expires |
-| Bluesky | Login works; first post in progress | App password in env vars `BSKY_HANDLE`, `BSKY_APP_PASSWORD` |
+| Bluesky | Working | App password in env vars `BSKY_HANDLE`, `BSKY_APP_PASSWORD` |
 | X | Not started | |
 | LinkedIn | Skipped on purpose | |
 
