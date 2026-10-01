@@ -25,7 +25,7 @@ revises them; this project posts the final versions.
 | Facebook | Working, app is Live | Environment API credential (Bearer) on `graph.facebook.com`; Page token, never expires |
 | Bluesky | Working | App password in env vars `BSKY_HANDLE`, `BSKY_APP_PASSWORD` |
 | X | Working | OAuth 1.0a: four keys, in env vars (or an OAuth 1.0a environment credential if one exists) |
-| LinkedIn | Skipped on purpose | |
+| LinkedIn | Skipped on purpose; not possible without a LinkedIn Page | See "LinkedIn" below |
 
 ### Mastodon
 - Instance: `wandering.shop`
@@ -72,3 +72,17 @@ revises them; this project posts the final versions.
 - The app is now labelled for publication in the console (it was "Development" at
   first). Facebook's development mode hid posts from logged-out viewers, so if X posts
   ever vanish for logged-out viewers, check the app label first.
+
+### LinkedIn
+- **Not possible for now. Don't offer it as an easy option.** LinkedIn's developer
+  console requires every app to be associated with a LinkedIn **Page** (a company page,
+  never a member profile), and the association is permanent. That applies even to an
+  app that only posts to Sylvia's personal profile.
+- Sylvia has no Page for this and doesn't want to create one, so LinkedIn stays skipped.
+- A previous session wrongly told Sylvia she could post to her personal profile without
+  a Page. That was incorrect, and it wasted her time. Don't repeat it.
+- Unconfirmed: the console mentions a "default Page" for individual developers, but no
+  source found names one, and typing "linkedin" or "developer" in the Page box just
+  returns real company pages. Don't suggest it as a way round.
+- Don't state LinkedIn API requirements from memory as fact. If this comes up again,
+  say what is unknown, or check first.
