@@ -64,5 +64,6 @@ revises them; this project posts the final versions.
 - Post: `POST https://api.x.com/2/tweets` with JSON `{"text": "..."}`.
 - X builds link cards itself from the article's tags; no image handling needed.
 - Allowed network domains: `api.x.com`, `api.twitter.com`.
-- The app is labelled "Development" in the console. After the first post, check it
-  shows to logged-out viewers (Facebook's development mode hid posts).
+- The app is now labelled for publication in the console (it was "Development" at
+  first). Facebook's development mode hid posts from logged-out viewers, so if X posts
+  ever vanish for logged-out viewers, check the app label first.
