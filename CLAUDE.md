@@ -24,7 +24,7 @@ revises them; this project posts the final versions.
 | Mastodon | Working | Environment API credential (Bearer) on `wandering.shop`; proxy adds it, you never see it |
 | Facebook | Working, app is Live | Environment API credential (Bearer) on `graph.facebook.com`; Page token, never expires |
 | Bluesky | Working | App password in env vars `BSKY_HANDLE`, `BSKY_APP_PASSWORD` |
-| X | Being set up | OAuth 1.0a: four keys, in env vars (or an OAuth 1.0a environment credential if one exists) |
+| X | Working | OAuth 1.0a: four keys, in env vars (or an OAuth 1.0a environment credential if one exists) |
 | LinkedIn | Skipped on purpose | |
 
 ### Mastodon
@@ -53,6 +53,11 @@ revises them; this project posts the final versions.
 - Bluesky rejects card images over 1 MB (article screenshots are often ~1.6 MB).
   Always shrink the card image to a JPEG under 1 MB before uploading; no need to ask.
 - Allowed network domains: `bsky.social`, `*.bsky.network`, `fearoflanding.com`.
+- **Always give Sylvia the post link in this form:**
+  `https://bsky.app/profile/akasylvia.bsky.social/post/<rkey>`, where `<rkey>` is the
+  last part of the `at://` URI returned by `createRecord`. Use her handle
+  (`akasylvia.bsky.social`), not the DID, and never give the raw `at://` URI as the
+  link.
 
 ### X
 - Account: @FearofLanding. App in the X developer console (console.x.com), pay-per-use.
@@ -64,5 +69,6 @@ revises them; this project posts the final versions.
 - Post: `POST https://api.x.com/2/tweets` with JSON `{"text": "..."}`.
 - X builds link cards itself from the article's tags; no image handling needed.
 - Allowed network domains: `api.x.com`, `api.twitter.com`.
-- The app is labelled "Development" in the console. After the first post, check it
-  shows to logged-out viewers (Facebook's development mode hid posts).
+- The app is now labelled for publication in the console (it was "Development" at
+  first). Facebook's development mode hid posts from logged-out viewers, so if X posts
+  ever vanish for logged-out viewers, check the app label first.
